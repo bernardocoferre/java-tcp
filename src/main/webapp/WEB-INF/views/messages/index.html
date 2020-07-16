@@ -1,0 +1,81 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/app.html}">
+<body>
+    <div layout:fragment="content">
+
+        <div th:insert="partials/stats">
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="card card-plain">
+                <div class="card-header">
+                    <h4 class="card-title">Mensagens Recebidas</h4>
+                    <p class="card-category">Clique <a href="#" data-toggle="modal" data-target="#delete">aqui</a> para apagar todas as mensagens</p>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Sessão</th>
+                                    <th>Endereço IP</th>
+                                    <th>Tipo</th>
+                                    <th>Dados</th>
+                                    <th>REST API</th>
+                                    <th>Recebida em</th>
+                                    <th>Enviada em</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="item : ${messages}">
+                                    <td th:text="'#' + ${item.id}"></td>
+                                    <td th:text="'#' + ${item.sessionId}"></td>
+                                    <td th:text="${item.ipAddress}"></td>
+                                    <td th:text="${item.type}"></td>
+                                    <td>
+                                        <a th:href="@{/messages/{id}(id=${item.id})}">
+                                            Visualizar
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a th:href="@{/api/messages/{id}(id=${item.id})}">
+                                            GET
+                                        </a>
+                                    </td>
+                                    <td th:text="${#dates.format(item.receivedAt, 'dd/MM/yyyy HH:mm:ss')}"></td>
+                                    <td th:text="${#dates.format(item.sentAt, 'dd/MM/yyyy HH:mm:ss')}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteLabel">Apagar Mensagens</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Você tem certeza que deseja <strong><span class="text-danger">apagar todas as mensagens</span></strong> da base de dados?
+                        <br><br>
+                        Essa ação <strong>não</strong> poderá ser desfeita no futuro.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" id="delete-all">Sim, quero apagar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

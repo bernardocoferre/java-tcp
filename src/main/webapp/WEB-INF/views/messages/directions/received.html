@@ -1,0 +1,130 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <div class="card card-plain">
+        <div class="card-header">
+            <h5 class="card-title">Recebida</h5>
+            <p class="card-category">Dados da mensagem de recebimento</p>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.id}">
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label>Hex</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.rawHex}">
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>INIT</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.data?.init}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>BYTES</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.data?.bytes}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>FRAME</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.data?.frame}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>DATA</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.data?.data}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>CRC</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.data?.crc}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>END</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.data?.end}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-plain" th:if="${received.textMessage != null}">
+        <div class="card-header">
+            <h5 class="card-title">Mensagem de Texto</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Texto</label>
+                        <textarea class="form-control textarea" disabled="" th:text="${received.textMessage.text}"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-plain" th:if="${received.userMessage != null}">
+        <div class="card-header">
+            <h5 class="card-title">Mensagem de Usuário</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Idade</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.userMessage.age}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Peso</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.userMessage.weight}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Altura</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.userMessage.height}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Tamanho do Nome</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.userMessage.nameLength}">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" disabled="" th:value="${received.userMessage.name}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

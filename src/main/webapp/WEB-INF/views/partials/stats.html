@@ -1,0 +1,111 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <div class="icon-big text-center icon-warning">
+                                <i class="nc-icon nc-caps-small text-warning"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                            <div class="numbers">
+                                <p class="card-category">TEXT MESSAGES</p>
+                                <p class="card-title" th:text="${messages.?[type?.name() == 'TEXT'].size()}"><p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <hr>
+                    <div class="stats">
+                        <i class="nc-icon nc-minimal-right"></i>
+                        Mensagens de texto recebidas
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <div class="icon-big text-center icon-warning">
+                                <i class="nc-icon nc-single-02 text-success"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                            <div class="numbers">
+                                <p class="card-category">USER MESSAGES</p>
+                                <p class="card-title" th:text="${messages.?[type?.name() == 'USER'].size()}"><p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <hr>
+                    <div class="stats">
+                        <i class="nc-icon nc-minimal-right"></i>
+                        Mensagens de usuário recebidas
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <div class="icon-big text-center icon-warning">
+                                <i class="nc-icon nc-calendar-60 text-danger"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                            <div class="numbers">
+                                <p class="card-category">DATE MESSAGES</p>
+                                <p class="card-title" th:text="${messages.?[type?.name() == 'DATE'].size()}"><p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <hr>
+                    <div class="stats">
+                        <i class="nc-icon nc-minimal-right"></i>
+                        Mensagens de data recebidas
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <div class="icon-big text-center icon-warning">
+                                <i class="nc-icon nc-chart-bar-32 text-primary"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                            <div class="numbers">
+                                <p class="card-category">TOTAL MESSAGES</p>
+                                <p class="card-title" th:text="${messages?.size()}"><p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <hr>
+                    <div class="stats">
+                        <i class="nc-icon nc-minimal-right"></i>
+                        Total recebido
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

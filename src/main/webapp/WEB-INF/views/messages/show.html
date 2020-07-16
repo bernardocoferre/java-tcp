@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/app.html}">
+<body>
+
+    <a class="navbar-brand" layout:fragment="content-title">Dados da Mensagem: #<strong th:text="${message.id}"></strong></a>
+
+    <div layout:fragment="content">
+        <div class="row" id="message-form">
+            <div class="col-md-6" th:with="received=${message.reference?.get(0)}" th:insert="messages/directions/received">
+
+            </div>
+
+            <div class="col-md-6" th:with="sent=${message.reference?.get(1)}" th:insert="messages/directions/sent">
+
+            </div>
+        </div>
+    </div>
+</body>

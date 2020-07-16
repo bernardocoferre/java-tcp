@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Java TCP Server</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/app.css" rel="stylesheet">
+    <link href="/assets/css/site.css" rel="stylesheet">
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar" data-color="white" data-active-color="danger">
+            <div class="logo">
+                <span class="simple-text logo-normal">TCP Server</span>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="active ">
+                        <a href="/">
+                            <i class="nc-icon nc-bank"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand" layout:fragment="content-title">Messages Monitor</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="content" layout:fragment="content">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/site.js"></script>
+
+</body>
+</html>

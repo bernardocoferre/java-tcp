@@ -1,0 +1,136 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <div class="card card-user">
+        <div class="card-header">
+            <h5 class="card-title">Enviada</h5>
+            <p class="card-category">Dados da mensagem de resposta</p>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.id}">
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label>Hex</label>
+                        <input type="text" class="form-control" readonly th:value="${sent.rawHex}">
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>INIT</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.data?.init}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>BYTES</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.data?.bytes}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>FRAME</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.data?.frame}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>DATA</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.data?.data}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>CRC</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.data?.crc}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>END</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.data?.end}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-user" th:if="${sent.textMessage != null}">
+        <div class="card-header">
+            <h5 class="card-title">Mensagem de Texto</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Texto</label>
+                        <textarea class="form-control textarea" disabled="" th:text="${sent.textMessage.text}"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-user" th:if="${sent.dateMessage != null}">
+        <div class="card-header">
+            <h5 class="card-title">Mensagem de Data</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Dia</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.dateMessage.day}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Mês</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.dateMessage.month}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Ano</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.dateMessage.year}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Hora</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.dateMessage.hour}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Minuto</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.dateMessage.minute}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Segundo</label>
+                        <input type="text" class="form-control" disabled="" th:value="${sent.dateMessage.second}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
