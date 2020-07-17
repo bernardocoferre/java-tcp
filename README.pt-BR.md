@@ -2,7 +2,7 @@
 
 > A simple Java TCP message processing built on top of Apache Mina Framework (https://mina.apache.org/).
 
-[Inglês](/README.md?raw=true) | [Português](/README.pt-BR.md?raw=true)
+[Inglês](/README.md) | [Português](/README.pt-BR.md)
 
 ## Instalação
 
